@@ -1,0 +1,551 @@
+/* -------------------------------BASE----------------------------------- */
+*,
+*::before,
+*::after{
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+   /* transition: all 0.5s ease-in-out; */
+}
+
+html{
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+    /*  */
+  /* This defines what 1rem is */
+  /* the default font-size of the browser 16 pixels. What we want is to set it to 10 pixels using percent  10 divided by 16 is 0.625 which is turn into a percent of 62.5%. .625 * 16 = 62.5 10 pixels */
+}
+
+body{
+background: var(--primary-bg);
+box-sizing: border-box;
+color: var(--text-color);
+font-family: "lato", sans-serif;
+font-weight: 400;
+font-size: 2rem;
+/* body font-size now 10px due to the change to html 62.5% */
+line-height: 1.7;
+position: relative;
+overflow: hidden;
+height: 100vh;
+width: 100vw;
+
+
+}
+
+li {
+  list-style: none;
+  }
+a {
+  /* color: var(--button-text); */
+  display: inline-block;
+  font-family: inherit;
+  text-decoration: none;
+  }
+
+  /* -------------------------------BASE----------------------------------- */
+
+
+  :root{
+/*========== Variables light theme ==========*/
+
+  --button-color:rgba(13, 36, 82, 0.7);
+  --button-color-hover:rgb(13, 36, 82);
+  --button-color-alt:rgba(191, 191, 191, 0.7);
+
+  --button-text:rgb(255, 255, 255);
+  --button-text-alt:rgb(124, 124, 124);
+
+    --container--bg: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+    );
+    --cricle--main:rgba(69, 72, 100, 0.4);
+
+    --primary-bg:linear-gradient(to right top, #0d2452, #8797a5);
+    --text-color:rgb(255, 255, 255);
+
+  --tooltip--color:rgb(13, 36, 82);
+  --tooltip--color-alt:rgb(191, 191, 191);
+  
+  --gary:grayscale(65%);
+  
+
+}
+/*========== Variables Dark theme ==========*/
+.dark-theme{
+  --button-color:rgba(242, 242, 242,0.7);
+  --button-color-hover:rgb(103, 108, 128);
+  --button-color-alt:rgba(13, 36, 82, 0.7);
+  
+  --button-text:#3862af;
+  --button-text-alt:rgb(255, 255, 255);
+
+  --container--bg:rgba(32, 30, 30, 0.7); 
+  --cricle--main:rgba(51, 56, 95, 0.7);
+
+  --primary-bg: #414040;
+   --text-color:rgb(228, 228, 228);
+
+  --tooltip--color:rgb(191, 191, 191);
+  --tooltip--color-alt:rgb(13, 36, 82);
+  
+    --gary:grayscale(85%);
+}
+/*========== Variables Dark theme ==========*/
+
+/*========== Component Button Styling ==========*/
+.btn{
+  align-items: center;
+  -webkit-backdrop-filter:blur(1rem);
+  backdrop-filter: blur(1rem);
+  background-color: var(--button-color);
+  border-radius: 50%;
+  -webkit-box-shadow: 5px 12px 16px 2px #4b4a4a3f; 
+  box-shadow: 5px 12px 16px 2px #4b4a4a3f;
+  color: var(--button-text);
+  display: flex;
+  justify-content: center;
+  transition:ease .3s;
+  }
+
+  .btn:hover{
+  background: var(--button-color-hover);
+  -webkit-box-shadow: inset 5px 12px 16px 2px #4b4a4a3f; 
+  box-shadow:inset 5px 12px 16px 2px #4b4a4a3f;
+  color: var(--button-text-alt);
+  }
+
+  .btn--xlg{
+height: 7rem;
+width: 7rem;
+  }
+  .btn--lg{
+height: 6rem;
+width: 6rem;
+  }
+  .btn--md{
+height: 5.5rem;
+width: 5.5rem;
+  }
+  .btn--s{
+height: 5rem;
+width: 5rem;
+  }
+/*========== Component Button Styling ==========*/
+
+/*========== Component Tooltip Styling ==========*/
+  .tooltip{
+  background-color: var(--tooltip--color);
+  border-radius: .5rem;
+  -webkit-box-shadow: 5px 12px 16px 2px #4b4a4a10; 
+  box-shadow: 5px 12px 16px 2px #4b4a4a3f;
+  color: var(--button-text);
+  font-weight: 700;
+  padding: .5rem 1.5rem;
+  pointer-events: none;
+  position: absolute;
+  text-transform: uppercase;
+  transition:ease-in .3s;
+  visibility: hidden;
+}
+
+.tooltip::after{
+  background-color: var(--tooltip--color);
+  border-radius: 3px;
+  content:'';
+  height: 1.2rem;
+  position: absolute;
+  width: 1.2rem;
+  
+}
+
+/*========== Tooltip top ==========*/
+.tooltip-top{
+  left: 50%;
+  top: -2.25rem;
+  transform: translateX(-50%);
+}
+
+.tooltip-top::after{
+  bottom: 1px;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+}
+
+.btn:hover .tooltip-top{
+  top: -6rem;
+  visibility: visible;
+}
+/*========== Tooltip right  ==========*/
+.tooltip-right{
+  right: 0;
+  transform: translateX(100%);
+}
+
+.tooltip-right::after{
+  left: 1px;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.btn:hover .tooltip-right{
+  right: -1rem;
+  visibility: visible;
+}
+/*========== Tooltip bottom ==========*/
+.tooltip-bottom{
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+}
+
+.tooltip-bottom::after{
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  top: 1px;
+}
+
+.btn:hover .tooltip-bottom{
+  bottom: -1rem;
+  opacity: 1;
+  visibility: visible;
+}
+/*========== Tooltip left ==========*/
+.tooltip-left{
+  left: 1rem;
+  transform: translateX(-100%);
+}
+.tooltip-left::after{
+  top: 50%;
+  right: 1px;
+  transform: translate(50%, -50%) rotate(45deg);
+}
+
+.btn:hover .tooltip-left{
+  left: -1rem;
+  visibility: visible;
+}
+
+.btn:hover .tooltip-right{
+  right: -1rem;
+  visibility: visible;
+}
+
+/*========== Component Tooltip Styling ==========*/
+
+/*========== Container ==========*/
+.container{
+  display: flex;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/*========== Container > nav ==========*/
+#nav {
+  align-items: center;
+  /* background-color: #0b0c0f98; */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding: 0 2rem;
+  position: absolute;
+  right: 1%;
+  top: 0;
+  }
+  #nav .nav--link{
+  /* background: var(--container--bg); */
+  display: flex;
+  font-size: 2rem;
+  margin: 2rem 0;
+}
+/*========== Container > nav ==========*/
+
+/*========== Container > Cricles ==========*/
+.cricle{
+  position: absolute;
+  border-radius: 50%;
+  background: var(--cricle--main);
+  animation: cricle-Animate 11s linear infinite;
+  animation-delay: calc(-2s * var(--i));
+  background-image: var(--title--main);
+  -webkit-box-shadow: 5px 12px 16px 2px #4b4a4a3f; 
+  box-shadow: 5px 12px 16px 2px #4b4a4a3f;
+  -webkit-backdrop-filter:blur(1rem);
+  backdrop-filter: blur(1rem);
+  z-index: -1;
+}
+
+
+/*========== Cricle sizing ==========*/
+.cricle--lg{
+  width: 40rem;
+  height: 40rem;
+}
+.cricle--md{
+  width: 30rem;
+  height: 30rem;
+}
+.cricle--sm{
+  width: 20rem;
+  height: 20rem;
+}
+.cricle--xs{
+  width: 10rem;
+  height: 10rem;
+}
+/*========== Cricle sizing ==========*/
+.cricle--1 {
+  left: -5%;
+  top: -15%;
+}
+.cricle--2 {
+  bottom: 15%;
+  left: -3%;
+  z-index: 200;
+}
+.cricle--3 {
+  bottom: 5%;
+  left: 25%;
+}
+.cricle--4 {
+  bottom: 30%;
+  right: 45%;
+}
+.cricle--5 {
+  right: 35%;
+  top: 20%;
+}
+.cricle--6 {
+  right: 15%;
+  top: 5%;
+}
+.cricle--7 {
+  right: -2%;
+  top: 8%;
+  z-index: 100;
+}
+.cricle--8 {
+  bottom: -5%;
+  right: -5%;
+}
+.cricle--9 {
+  left: 28%;
+  top: -5%;
+  z-index: 100;
+}
+  @keyframes cricle-Animate
+{
+  0%,
+  100%
+  {
+    transform: translateY(0rem);
+  }
+
+  50%
+  {
+    transform: translateY(5rem);
+  }
+}
+/*========== Container > Cricles ==========*/
+
+
+  /*========== Container > Header ==========*/
+    header{
+    -webkit-backdrop-filter:blur(1rem);
+    backdrop-filter: blur(1rem);
+    background: var(--container--bg);
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 30%;
+  }
+  /*========== Container > Header ==========*/
+  /*========== Container > Main ==========*/
+    main{
+    -webkit-backdrop-filter:blur(1rem);
+    backdrop-filter: blur(1rem);
+    background: var(--container--bg);
+    /* direction: rtl; */
+    height: 100%;
+    margin-left: 2rem;
+    overflow-y: scroll;
+    padding-right: 10rem;
+    position: relative;
+    scroll-behavior: smooth;
+    width: 70%;
+  }
+
+    main::-webkit-scrollbar {
+    width: 1.5rem;
+}
+  main::-webkit-scrollbar-thumb {
+    background: var(--text-color);
+    border-radius: 1rem;
+}
+
+  main section{
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden !important;
+  position: relative;
+  width: 100%;
+}
+
+  /*========== Container > Main ==========*/
+
+
+  /*========== Container > dark-mode ==========*/
+  #moon {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  /* transition: all 0.5s ease-out; */
+  width: 5rem;
+  z-index: 100;
+  
+}
+
+  /*========== Container > dark-mode ==========*/
+ 
+  @media only screen and (max-width: 1024px){
+  .cricle--2
+  {
+    bottom: 5%;
+    left: -12%;
+  }
+
+  .cricle--3,
+  .cricle--4,
+  .cricle--5,
+  .cricle--9
+  {
+    display: none;
+  }
+  .cricle--7 {
+    right: -8%;
+}
+  header{
+    display: none;
+  }
+  main{
+    width: 100%;
+    margin-left: 0;
+    padding-right: 0;
+  }
+  main section {
+  padding: 0;
+}
+.home__body{
+  display: none;
+}
+.header__figure{
+  display: none;
+}
+.media--profile{
+  display: contents;
+  display: flex;
+  
+}
+.resume{
+  margin: 0 0 4rem 0;
+}
+.profile__list{
+margin: 0 0 8rem 0;
+}
+
+.about-life {
+    display: none;
+  }
+  .about__body {
+    width: 100%;
+    padding: 0 3rem;
+  }
+  .about__copy {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    line-height: 2;
+  }
+
+   .skills {
+    display: flex;
+    flex-direction: column;
+  }
+  .skills__list {
+    align-items: center;
+    display: flex;
+    height: 20%;
+    justify-content: space-evenly;
+    flex-direction: row;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+  }
+.skills__item{
+  margin: 0 2rem;
+}
+  .skills__title{
+    font-size: 1.5rem;
+  }
+  .skills__copy {
+    display: none;
+  }
+  .skills__img {
+    font-size: 3rem;
+  }
+  .skills__meditation{
+    position: absolute;
+    top: 22%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+  }
+  .skills__meditation__figure {
+    width: 25rem;
+  }
+  .skills__meditation__figure::before {
+    left: 40%;
+  }
+
+  .skills__criclegraph--cricle {
+    width: 8.5rem;
+    height: 8.5rem;
+    margin: calc(-8rem / 2);
+    font-size: 1.5rem;
+  }
+
+#nav{
+  align-items: center;
+  background: var(--container-color-alt);
+  flex-direction: row;
+  height: 9%;
+  justify-content: center;
+  left: 0%;
+  top: 91%;
+  width: 100%;
+  -webkit-backdrop-filter:blur(5px);
+  backdrop-filter: blur(5px);
+}
+#nav .nav--link{
+  margin:0 3rem;
+}
+  
+#moon {
+  width: 4.5rem;
+  right: 5%;
+}
+
+}
+
+

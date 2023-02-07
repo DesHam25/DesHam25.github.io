@@ -1,0 +1,32 @@
+.home__body{
+  text-align: center;
+  
+}
+.desk{
+  bottom: -1rem;
+  filter: grayscale(70%);
+  left: 9%;
+  position:absolute;
+  width: 70rem;
+  z-index: 2;
+}
+.home__copy{
+  font-size: 4.5rem;
+  padding: 0 5rem 2rem 5rem;
+  text-align: center;
+}
+
+.home__title{
+  padding-left: 5rem;
+}
+
+.home__title span{
+  color: var(--button-text);
+}
+/* ==============  MEDIA-QUERIES-STYLE =============== */
+.media--profile
+{
+  display: none;
+  height: 100%;
+  width: 100%;
+}

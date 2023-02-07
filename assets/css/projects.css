@@ -1,0 +1,201 @@
+.project-slider {
+  background: var(--cricle--main);
+  border-radius: 1rem;
+  -webkit-box-shadow: 5px 12px 16px 2px #4b4a4a3f; 
+  box-shadow: 5px 12px 16px 2px #4b4a4a3f;
+  height: 40rem;
+  max-width: 80rem;
+  padding: 3rem;
+  position: relative;
+  transition: all 0.3s;
+}
+
+/* .project-slider__item {
+  display: flex;
+  align-items: center;
+  text-align: justify;
+} */
+
+.project-slider__item.swiper-slide-active .project-slider__img img {
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+.project-slider__item.swiper-slide-active .project-slider__content > * {
+  opacity: 1;
+  transform: none;
+}
+.project-slider__item.swiper-slide-active .project-slider__content > *:nth-child(1) {
+  transition-delay: 0.3s;
+}
+.project-slider__item.swiper-slide-active .project-slider__content > *:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+
+.project-slider__img {
+  background-color: var(--button-color);
+  border-radius: 1rem;
+  -webkit-box-shadow: 5px 12px 16px 2px #4b4a4a10;
+  box-shadow: 5px 12px 16px 2px #4b4a4a3f;
+  /* flex-shrink: 0; */
+  left: -20%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30rem;
+  height: 30rem;
+  overflow: hidden;
+  position: absolute;
+}
+.project-slider__img:after {
+  background-color: var(--button-color);
+  border-radius: 1rem;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.project-slider__img img {
+  border-radius: 1rem;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.project-slider__content {
+width: 100%;
+height: 100%;
+position: relative;
+padding-left: 19rem;
+
+}
+
+.project-slider__content > * {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: all 0.4s;
+}
+
+.project-slider__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.project-slider__text {
+  margin-bottom: 1.5rem;
+  direction: ltr;
+  width: 70%;
+  font-size: 1.7rem;
+}
+.project-slider__buttons{
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+.project-slider__button{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin:1rem 3rem;
+  cursor: pointer;
+  transition: all .2s;
+}
+.project-slider__button:hover{
+  background: var(--container-color-alt);
+}
+.project-slider__button i{
+  font-size: 2rem;
+}
+
+
+.project-slider .swiper-container-horizontal > .swiper-pagination-bullets, .project-slider .swiper-pagination-custom, .project-slider .swiper-pagination-fraction {
+  bottom: 1rem;
+  left: 0;
+  width: 100%;
+}
+.project-slider__pagination {
+  position: absolute;
+  z-index: 21;
+  right: 2rem;
+  width: 1.1rem !important;
+  text-align: center;
+  left: auto !important;
+  top: 50%;
+  bottom: auto !important;
+  transform: translateY(-50%);
+}
+
+.project-slider__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 8px 0;
+}
+
+.project-slider__pagination .swiper-pagination-bullet {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  border-radius: 1rem;
+  background: var(--button-color);
+  opacity: 0.2;
+  transition: all 0.3s;
+}
+.project-slider__pagination .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: var(--button-color);
+  height: 4rem;
+  box-shadow: 0px 0px 20px var(--button-color);
+}
+.atWork{
+  position: absolute;
+  width: 45rem;
+  filter: grayscale(80%);
+  z-index: 100;
+  bottom: -3%;
+  /* transform: scaleX(-1); */
+  left: 0%;
+  z-index: -1;
+}
+.navButton{
+  color: var(--button-color);
+  top: -8rem;
+}
+.navButton:hover{
+color: var(--text-color);
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    right:80px;
+  }
+
+@media only screen and (max-width: 1024px){
+  .project-slider {
+  max-width: 45rem;
+  height: 60rem;
+}
+.project-slider__img {
+  width: 24rem;
+  height: 20rem;
+  left: 50%;
+  top: -20%;
+  transform: translateX(-50%);
+}
+.project-slider__content {
+  padding-top: 12rem;
+  padding-right: 2.5rem;
+  padding-left: 0;
+}
+.project-slider__text {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.atWork{
+display: none;
+}
+
+}
