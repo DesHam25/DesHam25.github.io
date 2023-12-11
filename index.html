@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+    <title>Hamilton Portfolio</title>
+
+    <!-- ==========Page Icon Link ========== -->
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="assets/img/logo.ico"
+    />
+
+    <!-- ========== CSS Link ========== -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+
+    <!-------- custom cursor SVG trail effect  -------->
+    <canvas id="spacedWaterRippleCanvas"></canvas>
+    <!-------- custom cursor SVG trail effect  -------->
+
+    <!-- ========== Header Start ========== -->
+    <header class="sidebar">
+      <!-------- Profile Start -------->
+      <div class="profile">
+        <figure class="profile__image">
+          <img src="assets/img/Desmond.jpg" alt="profile image" />
+        </figure>
+        <h1 class="profile__title">Desmond Hamilton</h1>
+        <div class="profile__social-icons">
+          <a href="#" class="profile__social-link" aria-label="known more about me on facebook"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="#" class="profile__social-link" aria-label="known more about me on linkedin"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a href="#" class="profile__social-link" aria-label="known more about me on github"
+            ><i class="fa-brands fa-square-github"></i
+          ></a>
+          <a href="#" class="profile__social-link" aria-label="get in contact by email"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+      <!-------- Profile End -------->
+      <!-------- NavBar Start -------->
+      <nav class="navigation">
+        <ul class="navigation__ul">
+          <li class="navigation__ul-li">
+            <a href="#home" class="navigation__link btn active"
+              ><i class="fa-solid fa-house"></i><span>Home</span></a
+            >
+          </li>
+          <li class="navigation__ul-li">
+            <a href="#about" class="navigation__link btn"
+              ><i class="fa-solid fa-user"></i
+              ><span>About Me</span></a
+            >
+          </li>
+          <li class="navigation__ul-li">
+            <a href="#projects" class="navigation__link btn"
+              ><i class="fa-solid fa-briefcase"></i
+              ><span>Projects</span></a
+            >
+          </li>
+          <li class="navigation__ul-li">
+            <a href="#skills" class="navigation__link btn"
+              ><i class="fa-solid fa-server"></i
+              ><span>Skills</span></a
+            >
+          </li>
+          <!------- Resume Link Start -------->
+          <li class="navigation__ul-li">
+            <a
+              href="assets/Responsive-resume/index.html"
+              class="btn--focus"
+              ><span><i class="fa-solid fa-file"></i>Resume</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!-------- NavBar End -------->
+      <!-------- Footer Start -------->
+      <footer class="footer">
+        <p>
+          &copy; Copyright 2023 <br />Designed by
+          <a href="#" target="blank">Desmond Hamilton</a>
+        </p>
+      </footer>
+            <!-------- Footer End -------->
+    </header>
+
+    <!-------- Mobile Nav Toggle -------->
+    <i class="fa-solid fa-bars" id="menuBtn"></i>
+    <!-------- Mobile Nav Toggle -------->
+
+    <!-- ========== Header End ========== -->
+
+    <!-- ==================== ALL BODY CONTENT ==================== -->
+    <main class="main-content">
+      <!-- ========== Home Start ========== -->
+      <section id="home">
+
+         <!------- Start of Left col ------->
+        <div class="home__col-left">
+          <div class="home__title">
+          <h1 class="home__title-header">
+            <span class="home__title-header-small">Hi, I'm</span><br />
+            <span class="home__title-header--big">Desmond Hamilton.</span><br>
+            <span class="home__title-header-small">Nice to meet you.</span>
+           
+          </h1>
+          <p class="home__title-par">I'm a <span class="auto-input"></span></p>
+
+
+          <a href="assets/Responsive-resume/index.html" class="btn--focus"
+            ><span><i class="fa-solid fa-file"></i> Resume</span></a
+          >
+        </div>
+        </div>
+         <!------- End of Left col ------->
+
+        <!------- Start of Right col ------->
+        <div class="home__col-right">
+          <figure class="home__img">
+          <img
+            src="assets/img/Desmond.jpg"
+            alt="Profile photo for the home page"
+          />
+        </figure>
+        </div>
+         <!------- End of Right col ------->
+
+      </section>
+      <!-- ========== Home End ========== -->
+      <!-- ==========About Start ========== -->
+      <section id="about">
+
+          <!------- Start of Left col ------->
+         <div class="about__col-left">
+          <h2 class="page__title">
+            Who am I?
+          </h2>
+          <p class="about__intro">
+            I am working to become a Full-Stack Developer. JavaScript,
+            Node.js and React.js are a few of my specialties. I enjoy
+            incorporating animations in my projects, as well as good
+            UI design to create intuitive and dynamic user
+            experiences. 
+            <p class="about__intro">
+              A few of my recent projects are highlighted
+            below in the following section. Coding these projects and
+            future works is my favorite part because it allows me to
+            do some problem-solving when faced with issues, test the
+            code, and discover the best solutions. 
+          </p>
+            </p>
+          <p class="about__intro">
+            Though my professional career has taken many twists and
+            turns, I have always sought out ways to help others while
+            continuing to advance my programming skills.
+          </p>
+        </div>
+        <!------- End of Left col ------->
+
+        <!------- Start of Right col ------->
+         <div class="about__col-right">
+ 
+          <div class="about__box">
+            <div class="about__content">
+              <img src="assets/img/dumbbell.png" alt="" />
+              <p>
+                Working out benefits me, both physically and mentally.
+              </p>
+            </div>
+          </div>
+                   <div class="about__box">
+            <div class="about__content">
+              <img src="assets/img/family.png" alt="" />
+              <p>
+              Family support is important to me, providing me with guidance, and balance in my life.
+              </p>
+            </div>
+          </div>
+          <div class="about__box">
+            <div class="about__content">
+              <img src="assets/img/block.png" alt="" />
+              <p>
+                Volleyball Provides me with Strength and Energy Boost.
+              </p>
+            </div>
+          </div>
+          <div class="about__box">
+            <div class="about__content">
+              <img src="assets/img/art.png" alt="" />
+              <p>
+                Drawing is a powerful form of self-expression.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!------- End of Right col ------->
+
+      </section>
+      <!-- ========== About End ========== -->
+      <!-- ========== Projects Start ========== -->
+      <section id="projects">
+        <div class="slide-container">
+          <div id="slide">
+            <div class="slide__item slide-1">
+              <div class="slide__item--content">
+                <h3 class="content--name content__header">
+                  Project <span class="content__header--color">1</span>
+                </h3>
+                <p class="content--des">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing
+                  elit. Explicabo vel repellat et, quidem aliquid quia
+                  quos? Voluptatum voluptatem ex tempora!
+                </p>
+                <button type="button" class="btn--focus pro-btn">
+                  <i class="fa-brands fa-github-alt"> code</i>
+                </button>
+                <button type="button" class="slide--btn btn pro-btn">
+                  <span><i class="fa-solid fa-gamepad"></i> Project</span>
+                </button>
+              </div>
+            </div>
+            <div class="slide__item slide-2">
+              <div class="slide__item--content">
+                <h3 class="content--name content__header">
+                  Project <span class="content__header--color">2</span>
+                </h3>
+                <p class="content--des">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing
+                  elit. Explicabo vel repellat et, quidem aliquid quia
+                  quos? Voluptatum voluptatem ex tempora!
+                </p>
+                <button type="button" class="btn--focus pro-btn">
+                  <i class="fa-brands fa-github-alt"> code</i>
+                </button>
+                <button type="button" class="slide--btn btn pro-btn">
+                  <span><i class="fa-solid fa-gamepad"></i> Project</span>
+                </button>
+              </div>
+            </div>
+            <div class="slide__item slide-3">
+              <div class="slide__item--content">
+                <h3 class="content--name content__header">
+                  Project <span class="content__header--color">3</span>
+                </h3>
+                <p class="content--des">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing
+                  elit. Explicabo vel repellat et, quidem aliquid quia
+                  quos? Voluptatum voluptatem ex tempora!
+                </p>
+                <button type="button" class="btn--focus pro-btn">
+                  <i class="fa-brands fa-github-alt"> code</i>
+                </button>
+                <button type="button" class="slide--btn btn pro-btn">
+                  <span><i class="fa-solid fa-gamepad"></i> Project</span>
+                </button>
+              </div>
+            </div>
+            <div class="slide__item slide-4">
+              <div class="slide__item--content">
+                <h3 class="content--name content__header">
+                  Project <span class="content__header--color">4</span>
+                </h3>
+                <p class="content--des">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing
+                  elit. Explicabo vel repellat et, quidem aliquid quia
+                  quos? Voluptatum voluptatem ex tempora!
+                </p>
+                <button type="button" class="btn--focus pro-btn">
+                  <i class="fa-brands fa-github-alt"> code</i>
+                </button>
+                <button type="button" class="slide--btn btn pro-btn">
+                  <span><i class="fa-solid fa-gamepad"></i> Project</span>
+                </button>
+              </div>
+            </div>
+            <div class="slide__item slide-5">
+              <div class="slide__item--content">
+                <h3 class="content--name content__header">
+                  Project <span class="content__header--color">5</span>
+                </h3>
+                <p class="content--des">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing
+                  elit. Explicabo vel repellat et, quidem aliquid quia
+                  quos? Voluptatum voluptatem ex tempora!
+                </p>
+                <button type="button" class="btn--focus pro-btn">
+                  <i class="fa-brands fa-github-alt"> code</i>
+                </button>
+                <button type="button" class="slide--btn btn pro-btn">
+                  <span><i class="fa-solid fa-gamepad"></i> Project</span>
+                </button>
+              </div>
+            </div>
+            <div class="slide__item slide-6">
+              <div class="slide__item--content">
+                <h3 class="content--name content__header">
+                  Project <span class="content__header--color">6</span>
+                </h3>
+                <p class="content--des">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing
+                  elit. Explicabo vel repellat et, quidem aliquid quia
+                  quos? Voluptatum voluptatem ex tempora!
+                </p>
+                <button type="button" class="btn--focus pro-btn">
+                  <i class="fa-brands fa-github-alt"> code</i>
+                </button>
+                <button type="button" class="slide--btn btn pro-btn">
+                  <span><i class="fa-solid fa-gamepad"></i> Project</span>
+                </button>
+              </div>
+            </div>
+            <div class="slide__item slide-7">
+              <div class="slide__item--content">
+                <h3 class="content--name content__header">
+                  Project <span class="content__header--color">7</span>
+                </h3>
+                <p class="content--des">
+                  Lorem ipsum dolor sit amet consectetur, adipisicing
+                  elit. Explicabo vel repellat et, quidem aliquid quia
+                  quos? Voluptatum voluptatem ex tempora!
+                </p>
+                <button type="button" class="btn--focus pro-btn">
+                  <i class="fa-brands fa-github-alt"> code</i>
+                </button>
+                <button type="button" class="slide--btn btn pro-btn">
+                  <span><i class="fa-solid fa-gamepad"></i> Project</span>
+                </button>
+              </div>
+            </div>
+            <div class="buttons">
+              <button type="button" aria-label="Prev" id="prev">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button type="button" aria-label="Next" id="next">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ========== Projects End ========== -->
+      <!-- ========== Skills Start ========== -->
+      <section id="skills">
+
+        <!------- Start of Left col ------->
+        <div class="skills__col-left">
+            <h2 class="page__title">
+            My Skills
+          </h2>
+          <p class="skills__intro">
+Skilled developer in NLP, machine learning, and creative design, committed to delivering cutting-edge solutions for web development. Let's collaborate and build something amazing!
+          </p>
+        </div>
+        <!------- End of Left col ------->
+
+        <!------- Start of Right col ------->
+        <div class="skills__col-right">
+          <div class="skills__box">
+            <div class="skills__content">
+              <img src="assets/img/html-5.png" alt="" />
+            </div>
+          </div>
+          <div class="skills__box">
+            <div class="skills__content">
+              <img src="assets/img/css-3.png" alt="" />
+            </div>
+          </div>
+          <div class="skills__box">
+            <div class="skills__content">
+              <img src="assets/img/js.png" alt="" />
+            </div>
+          </div>
+          <div class="skills__box">
+            <div class="skills__content">
+              <img src="assets/img/sass.png" alt="" />
+            </div>
+          </div>
+          <div class="skills__box">
+            <div class="skills__content">
+              <img src="assets/img/visual-basic.png" alt="" />
+            </div>
+          </div>
+          <div class="skills__box">
+            <div class="skills__content">
+              <img src="assets/img/node-js.png" alt="" />
+            </div>
+          </div>
+          <div class="skills__box">
+            <div class="skills__content">
+              <img src="assets/img/excel.png" alt="" />
+            </div>
+          </div>
+          <div class="skills__box">
+            <div class="skills__content">
+              <img src="assets/img/illustrator.png" alt="" />
+            </div>
+          </div>
+          <div class="skills__box">
+            <div class="skills__content">
+              <img src="assets/img/figma.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <!------- End of Right col ------->
+
+      </section>
+      <!-- ========== Skills End ========== -->
+    </main>
+    <!-- ==================== ALL BODY CONTENT ==================== -->
+
+    <!-- TYped.JS File (For Typing Effect) -->
+    <script src="https://unpkg.com/typed.js@2.0.132/dist/typed.umd.js"></script>
+
+    <!-- ========== FontAwesome JS Files (Icon File) ========== -->
+    <script
+      src="https://kit.fontawesome.com/45d19828c5.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ========== JS Files ========== -->
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
