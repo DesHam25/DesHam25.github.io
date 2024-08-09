@@ -137,18 +137,30 @@ window.addEventListener('scroll', function () {
 
 // Typing Effect
 
-let typed = new Typed('.auto-input', {
-  strings: [
-    'Front-End Developer!',
-    'Freelancer!',
-    'UI Designer',
-    'Artist',
-  ],
-  typeSpeed: 100,
-  backSpeed: 100,
-  backDelay: 2000,
-  loop: true,
-});
+const wordList = [
+  'Front-End Developer',
+  'Product Designer',
+  'Freelancer',
+  'Artist',
+];
+const container = document.getElementById('wordContainer');
+let currentIndex = 0;
+
+function scrollWords() {
+  container.innerHTML =
+    '<div id="scrollingWords">' + wordList[currentIndex] + '</div>';
+  currentIndex = (currentIndex + 1) % wordList.length;
+}
+
+// Display the first word immediately
+scrollWords();
+
+function startScrolling() {
+  setInterval(scrollWords, 3000); // Adjust the interval (in milliseconds) as needed
+}
+
+// Call the function to start scrolling
+startScrolling();
 
 // Projects Slider start ======================================
 
